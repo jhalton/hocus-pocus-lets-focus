@@ -1,3 +1,3 @@
 # Hocus Pocus Let's Focus
 
-This is a mad lit app made by Jeanette and... I guess... Ian helped kinda
+A study timer app to help you get the most out of your study time
