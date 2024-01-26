@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  position: relative;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #96aa91;
+}
+
+.main_timer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main_progress-bar {
+  height: 30px;
+  border-radius: 10px;
+  background-color: #0e3523;
+  width: 500px;
+}
+
+.main_timer-options {
+  padding: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  top: 0;
+  right: 0;
+}
+
+.main_timer-options > button {
+  width: 150px;
+  height: 50px;
+}

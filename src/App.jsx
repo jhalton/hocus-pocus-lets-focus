@@ -1,30 +1,23 @@
-import { useState } from "react";
-
-const tipbits = [
-  "Lets Pomodora!!!!",
-  "Ehhh I think well be lazy slugs today",
-  "Hard work is best work",
-  "Its the litset when your working",
-  "Focus is the best",
-  "Naps > working all day",
-  "Where are my kitties...",
-];
+import "./App.css";
 
 function App() {
-  const [index, setIndex] = useState(null);
   return (
-    <div>
-      <h1>Hocus Pocus! Lets Focus!</h1>
-      <h2>{tipbits[index]}</h2>
-      <p>Let see what we are doing today!</p>
-      <button
-        onClick={() => {
-          setIndex(Math.floor(Math.random() * tipbits.length));
-        }}
-      >
-        Click Me
-      </button>
-    </div>
+    <>
+      <main className="main">
+        <div className="main_timer">
+          <h1>WORK</h1>
+          <h2>00:25:00</h2>
+        </div>
+        <div>
+          <img src="images.png" alt="hourglass" />
+        </div>
+        <div className="main_progress-bar"></div>
+      </main>
+      <div className="main_timer-options">
+        <button>New Timer</button>
+        <button>Hide Timer</button>
+      </div>
+    </>
   );
 }
 
