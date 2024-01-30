@@ -1,33 +1,50 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [time, setTime] = useState(0);
+  const [timerId, setTimerId] = useState(null);
+  const [timeValue, setTimeValue] = useState(0);
+
+  const startTimer = () => {
+    if (!timerId) {
+      setTimerId(
+        setInterval(() => {
+          setTime((time) => time - 1);
+        }, 1000)
+      );
+    }
+  };
+
+  const stopTimer = () => {
+    clearInterval(timerId);
+    if (timerId) setTimerId(null);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <main className="main">
+        <div className="main_timer">
+          <h1>WORK</h1>
+          <h2>{`${Math.floor(time / 3600)}:${Math.floor((time % 3600) / 60)}:${
+            time % 60
+          }`}</h2>
+        </div>
+        <div>
+          <img src="images.png" alt="hourglass" />
+        </div>
+        <div className="main_progress-bar"></div>
+      </main>
+      <div className="main_timer-options">
+        <input
+          type="number"
+          placeholder={time}
+          onChange={(e) => setTimeValue(e.target.value)}
+        />
+        <button onClick={() => setTime(timeValue)}>Set Time</button>
+        <button onClick={startTimer}>Start Timer</button>
+        <button onClick={stopTimer}>Stop Timer</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
