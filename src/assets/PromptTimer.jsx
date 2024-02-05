@@ -17,6 +17,8 @@ const PromptTimer = () => {
         <div className="prompt-timer--buttons">
           <button>Clear Timer</button>
           <button>Set Timer</button>
+          {/* <input type="text">Hours</input>:<input type="text">Minutes</input>:
+        <input type="text">Seconds</input> */}
           <button>Start Timer</button>
           <button>Stop Timer</button>
         </div>
