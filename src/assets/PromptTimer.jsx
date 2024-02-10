@@ -1,10 +1,16 @@
 import stopwatch from "./Resources/s-watch.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const PromptTimer = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    //TODO
+    //I want to count down each second. When the seconds run to 0,
+    //we need to decrement the minutes, then start the seconds over
+  });
 
   return (
     <>
